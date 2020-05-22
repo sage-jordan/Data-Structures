@@ -169,5 +169,38 @@ class DoublyLinkedList:
 
     """Returns the highest value currently in the list"""
 
-    def get_max(self):  # NOT DONE
-        pass
+    def get_max(self):
+        # walk through the entire list
+        # keep track of the biggest value we've found
+
+        highVal = self.head.value
+        currNode = self.head
+
+        while currNode:
+            if currNode.value > highVal:
+                highVal = currNode.value
+
+            currNode = currNode.next
+        return highVal
+
+    def find_mid(self):
+        end = self.head
+        middle = self.head
+
+        while end != None and end.next != None and end.next.next != None:
+            end = end.next.next
+            middle = middle.next
+        return middle
+
+
+dll = DoublyLinkedList()
+dll.add_to_tail(1)
+dll.add_to_tail(2)
+dll.add_to_tail(3)
+dll.add_to_tail(4)
+dll.add_to_tail(5)
+dll.add_to_tail(6)
+dll.add_to_tail(7)
+
+middle = dll.find_mid()
+print(middle.value)
