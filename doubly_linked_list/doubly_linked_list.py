@@ -193,14 +193,14 @@ class DoublyLinkedList:
         return middle
 
 
-dll = DoublyLinkedList()
-dll.add_to_tail(1)
-dll.add_to_tail(2)
-dll.add_to_tail(3)
-dll.add_to_tail(4)
-dll.add_to_tail(5)
-dll.add_to_tail(6)
-dll.add_to_tail(7)
+# dll = DoublyLinkedList()
+# dll.add_to_tail(1)
+# dll.add_to_tail(2)
+# dll.add_to_tail(3)
+# dll.add_to_tail(4)
+# dll.add_to_tail(5)
+# dll.add_to_tail(6)
+# dll.add_to_tail(7)
 
-middle = dll.find_mid()
-print(middle.value)
+# middle = dll.find_mid()
+# print(middle.value)
