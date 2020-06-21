@@ -9,6 +9,8 @@ This part of the project comprises two days:
 2. Implement the `in_order_print`, `bft_print`, and `dft_print` methods
    on the BSTNode class.
 """
+
+
 class BSTNode:
     def __init__(self, value):
         self.value = value
@@ -17,14 +19,50 @@ class BSTNode:
 
     # Insert the given value into the tree
     def insert(self, value):
-        pass
+        if self.value == value:
+            return True
+        elif self.value < vlaue and self.right:
+            self.value = self.value.right
+            return self.insert(value)
+        elif self.value > value and self.left:
+            self.value = self.value.left
+            return self.insert(value)
+        return False
+
+        # if not self.value:
+        #     self.value = value
+        # if value < self.value:
+        #     if not self.left:
+        #         self.left = value
+        #         return 'value added'
+        #     return self.insert(value)
+        # if value > self.value:
+        #     if not self.right:
+        #         self.right = value
+        #         return 'value added'
+        #     return self.insert(value)
+        # if value == self.value:
+        #     return 'Cannot add, duplicate item'
 
     # Return True if the tree contains the value
     # False if it does not
+
     def contains(self, target):
-        pass
+        # when we start searching, slef will be the root
+        # compare the target against self
+        if target == self.value:
+            return True
+        if target < self.value:
+            if self.left == None:
+                return False
+            return self.left.contains(target)
+        if target > self.value:
+            if self.right == None:
+                return False
+            return self.right.contains(target)
 
     # Return the maximum value found in the tree
+
     def get_max(self):
         pass
 
@@ -59,3 +97,14 @@ class BSTNode:
     # Print Post-order recursive DFT
     def post_order_dft(self, node):
         pass
+
+
+tree = BSTNode(9)
+print("False: ", tree.contains(8))
+# print("True: ", tree.contains(8))
+# print("False: ", tree.contains(8))
+# print("True: ", tree.contains(8))
+# print("False: ", tree.contains(8))
+# print("True: ", tree.contains(8))
+# print("False: ", tree.contains(8))
+# print("True: ", tree.contains(8))
